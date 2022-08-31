@@ -1,0 +1,6 @@
+% GridDimX   GridDimY  Ratio_Spacing  MboxRef  NboxRef
+400  270  4  45  120
+%Depth Subgrid (DATA or NONE)
+%NONE
+%Structure Subgrid (DATA or NONE)
+%NONE

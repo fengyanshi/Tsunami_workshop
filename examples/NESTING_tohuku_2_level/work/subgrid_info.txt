@@ -1,0 +1,7 @@
+% GridDimX   GridDimY  Ratio_Spacing  MboxRef  NboxRef
+113  71  6  133  162
+%Depth Subgrid (DATA or NONE)
+DATA
+dep_sub_m130_n157_121x79_5min.txt
+%Structure Subgrid (DATA or NONE)
+NONE

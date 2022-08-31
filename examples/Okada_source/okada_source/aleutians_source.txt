@@ -1,0 +1,2 @@
+Lon        Lat       Len Wid dip  rake   strike slip(m) depth(km)
+171.014400 53.305400 100 50 35.31 90.00 303.16  10.0    17.94

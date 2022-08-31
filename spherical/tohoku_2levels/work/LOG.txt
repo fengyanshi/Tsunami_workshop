@@ -1,0 +1,12 @@
+ ---- LOG FILE ---
+ FUNWAVE                                                                         
+  --------------input start --------------
+ PX   =  2 PY   =  2
+ Mglob=320 Nglob=240
+ Lon_West=      132.00
+ Lat_South=      -60.00
+ Dphi     =        0.50
+ Dtheta   =        0.50
+ TwoWayNesting =  T
+NumGrid =            2
+ RESULT_FOLDER:output/                                           
