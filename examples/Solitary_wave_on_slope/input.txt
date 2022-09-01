@@ -50,7 +50,7 @@ HOTSTART_INTV = 360000000000.0
   ! -----------------GRID----------------------------------
   ! if use spherical grid, in decimal degrees
 DX = 1.0
-DY = 2.0
+DY = 1.0
   ! ----------------WAVEMAKER------------------------------
   !  wave makeer
   ! LEF_SOL- left boundary solitary, need AMP,DEP, LAGTIME
@@ -113,10 +113,10 @@ FroudeCap = 10.0
   ! MinDepth for wetting-drying
 MinDepth=0.001
 
-  ! -------------- SHOW BREAKING -----------------------
+  ! -------------- BREAKING -----------------------
   ! breaking is calculated using shock wave capturing scheme
   ! the criteria is only for demonstration or bubble calculation
-SHOW_BREAKING = F
+VISCOSITY_BREAKING = T
 Cbrk1 = 0.45
 Cbrk2 = 0.35
   ! -----------------OUTPUT-----------------------------
@@ -134,4 +134,4 @@ Hmin = F
 MFmax = F
 Umax = F
 VORmax = F
-MASK = F
+MASK = T
