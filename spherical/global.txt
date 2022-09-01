@@ -1,4 +1,0 @@
-104c104
-<        !INTEGER,DIMENSION(:,:,:),ALLOCATABLE :: ParentDomainID
----
->        INTEGER,DIMENSION(:,:,:),ALLOCATABLE :: ParentDomainID
