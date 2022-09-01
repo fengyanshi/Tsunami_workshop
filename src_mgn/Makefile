@@ -1,7 +1,7 @@
 #-----------BEGIN MAKEFILE-------------------------------------------------
             SHELL         = /bin/sh
             DEF_FLAGS     = -P -C -traditional 
-            EXEC          = mynest_sph
+            EXEC          = funwave_mgn
 #==========================================================================
 #--------------------------------------------------------------------------
 #        PRECISION          DEFAULT PRECISION: SINGLE                     
@@ -10,7 +10,7 @@
 
 #            FLAG_1 = -DDOUBLE_PRECISION 
             FLAG_2 = -DPARALLEL
-            FLAG_3 = -DSAMPLES
+#            FLAG_3 = -DSAMPLES
 #            FLAG_4 = -DCARTESIAN
 #              FLAG_6 = -DINTEL
 #             FLAG_7 = -DMIXING
@@ -61,7 +61,7 @@
 .F.o:
 	$(CPP) $(CPPARGS) $*.F > $*.f90
 	$(FC)  -c $(FFLAGS) $(INCS) $*.f90
-#	\rm $*.f90
+	/bin/rm $*.f90
 #--------------------------------------------------------------------------
 #  FUNWAVE-TVD Source Code.
 #--------------------------------------------------------------------------

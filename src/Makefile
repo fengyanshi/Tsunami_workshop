@@ -1,7 +1,7 @@
 #-----------BEGIN MAKEFILE-------------------------------------------------
             SHELL         = /bin/sh
             DEF_FLAGS     = -P -traditional 
-            EXEC          = funwave_spherical
+            EXEC          = funwave_cartesian
 #==========================================================================
 #--------------------------------------------------------------------------
 #        PRECISION          DEFAULT PRECISION: SINGLE                     
@@ -10,7 +10,7 @@
 
 #            FLAG_1 = -DDOUBLE_PRECISION 
              FLAG_2 = -DPARALLEL
-#             FLAG_3 = -DCARTESIAN
+             FLAG_3 = -DCARTESIAN
 #              FLAG_4 = -DINTEL
 #               FLAG_5 = -DCOUPLING
 #             FLAG_6 = -DZALPHA

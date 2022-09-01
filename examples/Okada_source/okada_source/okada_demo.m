@@ -68,6 +68,10 @@ pcolor(Lon0,Lat0,Z0),shading flat
 hold on
 contour(Lon0,Lat0,Dep0,[-100:10:0],'w-')
 caxis([-5 5])
+colorbar
+xlabel('Longitude (deg)');
+ylabel('Latitude (deg)')
+ 
 print -djpeg100 aleutians.jpg
 
 save('aleutians.txt','Z0','-ascii','-double','-tabs');
