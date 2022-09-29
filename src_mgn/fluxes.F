@@ -871,26 +871,26 @@ SUBROUTINE CONSTRUCTION_HO_minmod
 
 ! construct in x-direction
 # if defined(CARTESIAN)
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX,MASK(1:Mloc,1:Nloc),U(1:Mloc,1:Nloc),UxL(1:Mloc1,1:Nloc),UxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX,MASK(1:Mloc,1:Nloc),V(1:Mloc,1:Nloc),VxL(1:Mloc1,1:Nloc),VxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX,MASK(1:Mloc,1:Nloc),HU(1:Mloc,1:Nloc),HUxL(1:Mloc1,1:Nloc),HUxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX,MASK(1:Mloc,1:Nloc),HV(1:Mloc,1:Nloc),HVxL(1:Mloc1,1:Nloc),HVxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX,MASK(1:Mloc,1:Nloc),Eta(1:Mloc,1:Nloc),EtaRxL(1:Mloc1,1:Nloc),EtaRxR(1:Mloc1,1:Nloc))
 # else
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),U(1:Mloc,1:Nloc),UxL(1:Mloc1,1:Nloc),UxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),V(1:Mloc,1:Nloc),VxL(1:Mloc1,1:Nloc),VxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),HU(1:Mloc,1:Nloc),HUxL(1:Mloc1,1:Nloc),HUxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),HV(1:Mloc,1:Nloc),HVxL(1:Mloc1,1:Nloc),HVxR(1:Mloc1,1:Nloc))
-     CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+     CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
            DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),Eta(1:Mloc,1:Nloc),EtaRxL(1:Mloc1,1:Nloc),EtaRxR(1:Mloc1,1:Nloc))
 # endif
 
@@ -900,11 +900,11 @@ SUBROUTINE CONSTRUCTION_HO_minmod
      HxR=EtaRxR+Depthx
 # if defined (CARTESIAN)
      IF(DISPERSION)THEN
-      CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,DX,  &
+      CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,DX,  &
 	MASK(1:Mloc,1:Nloc),U4(1:Mloc,1:Nloc),U4xL(1:Mloc1,1:Nloc),U4xR(1:Mloc1,1:Nloc))
 	  
 	!ykchoi :: Following V4xL, V4xR terms should be computed.
-	CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,DX,  &
+	CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,DX,  &
 	MASK(1:Mloc,1:Nloc),V4(1:Mloc,1:Nloc),V4xL(1:Mloc1,1:Nloc),V4xR(1:Mloc1,1:Nloc))  
      ENDIF
 
@@ -930,11 +930,11 @@ SUBROUTINE CONSTRUCTION_HO_minmod
 # else
 # if defined(ZALPHA)
      IF(DISPERSION)THEN
-      CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+      CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
 	DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),U4(1:Mloc,1:Nloc),U4xL(1:Mloc1,1:Nloc),U4xR(1:Mloc1,1:Nloc))
 
 	!ykchoi :: Following V4xL, V4xR terms should be computed.
-	CALL CONSTRUCT_HO_X(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
+	CALL CONSTRUCT_HO_X_minmod(Mloc,Nloc,Mloc1,Ibeg,Iend,Jbeg,Jend,   &
 	DX(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),V4(1:Mloc,1:Nloc),V4xL(1:Mloc1,1:Nloc),V4xR(1:Mloc1,1:Nloc))
      ENDIF
 
@@ -988,26 +988,26 @@ SUBROUTINE CONSTRUCTION_HO_minmod
       
 ! construct in y-direction
 # if defined(CARTESIAN)
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY,MASK(1:Mloc,1:Nloc),U(1:Mloc,1:Nloc),UyL(1:Mloc,1:Nloc1),UyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY,MASK(1:Mloc,1:Nloc),V(1:Mloc,1:Nloc),VyL(1:Mloc,1:Nloc1),VyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY,MASK(1:Mloc,1:Nloc),HV(1:Mloc,1:Nloc),HVyL(1:Mloc,1:Nloc1),HVyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY,MASK(1:Mloc,1:Nloc),HU(1:Mloc,1:Nloc),HUyL(1:Mloc,1:Nloc1),HUyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY,MASK(1:Mloc,1:Nloc),Eta(1:Mloc,1:Nloc),EtaRyL(1:Mloc,1:Nloc1),EtaRyR(1:Mloc,1:Nloc1))
 # else
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),U(1:Mloc,1:Nloc),UyL(1:Mloc,1:Nloc1),UyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),V(1:Mloc,1:Nloc),VyL(1:Mloc,1:Nloc1),VyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),HV(1:Mloc,1:Nloc),HVyL(1:Mloc,1:Nloc1),HVyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),HU(1:Mloc,1:Nloc),HUyL(1:Mloc,1:Nloc1),HUyR(1:Mloc,1:Nloc1))
-     CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
+     CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,  &
        DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),Eta(1:Mloc,1:Nloc),EtaRyL(1:Mloc,1:Nloc1),EtaRyR(1:Mloc,1:Nloc1))
 # endif
 
@@ -1017,11 +1017,11 @@ SUBROUTINE CONSTRUCTION_HO_minmod
      HyR=EtaRyR+Depthy
 # if defined (CARTESIAN)
      IF(DISPERSION)THEN
-       CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
+       CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
 	 DY,MASK(1:Mloc,1:Nloc),V4(1:Mloc,1:Nloc),V4yL(1:Mloc,1:Nloc1),V4yR(1:Mloc,1:Nloc1))
 
 	 !ykchoi :: Following U4yL, U4yR terms should be computed.
-	 CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
+	 CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
 	 DY,MASK(1:Mloc,1:Nloc),U4(1:Mloc,1:Nloc),U4yL(1:Mloc,1:Nloc1),U4yR(1:Mloc,1:Nloc1))
      ENDIF
 
@@ -1045,11 +1045,11 @@ SUBROUTINE CONSTRUCTION_HO_minmod
 
 # if defined (ZALPHA)
      IF(DISPERSION)THEN
-       CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
+       CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
 	 DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),V4(1:Mloc,1:Nloc),V4yL(1:Mloc,1:Nloc1),V4yR(1:Mloc,1:Nloc1))
 
 	 !ykchoi :: Following U4yL, U4yR terms should be computed.
-	 CALL CONSTRUCT_HO_Y(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
+	 CALL CONSTRUCT_HO_Y_minmod(Mloc,Nloc,Nloc1,Ibeg,Iend,Jbeg,Jend,   &
 	 DY(1:Mloc,1:Nloc),MASK(1:Mloc,1:Nloc),U4(1:Mloc,1:Nloc),U4yL(1:Mloc,1:Nloc1),U4yR(1:Mloc,1:Nloc1))
      ENDIF
 
